@@ -1,0 +1,442 @@
+initial: How do you do.  Please tell me your problem.
+final: Goodbye.  It was nice talking to you.
+quit: bye
+quit: goodbye
+quit: done
+quit: exit
+quit: quit
+pre: dont don't
+pre: hi hello
+pre: Hi hello
+pre: hey hello
+pre: Hey hello
+pre: cant can't
+pre: wont won't
+pre: recollect remember
+pre: recall remember
+pre: dreamt dreamed
+pre: dreams dream
+pre: maybe perhaps
+pre: certainly yes
+pre: machine computer
+pre: machines computer
+pre: computers computer
+post: am are
+post: your my
+pre: were was
+post: me you
+pre: you're you are
+pre: i'm i am
+post: myself yourself
+post: yourself myself
+post: i you
+post: you I
+post: my your
+post: i'm you are
+pre: same alike
+pre: identical alike
+pre: equivalent alike
+syn: belief feel think believe wish
+syn: family mother mom father dad sister brother wife children child
+syn: desire want need
+syn: sad unhappy depressed sick
+syn: happy elated glad better
+syn: cannot can't
+syn: everyone everybody nobody noone
+syn: be am is are was
+key: none 0
+  decomprule: *
+    reasmbstr: I'm not sure I understand you fully.
+    reasmbstr: Please go on.
+    reasmbstr: What does that suggest to you ?
+    reasmbstr: Do you feel strongly about discussing such things ?
+	reasmbstr: That is interesting.  Please continue.
+	reasmbstr: Tell me more about that.
+	reasmbstr: Does talking about this bother you ?
+key: sorry 0
+  decomprule: *
+    reasmbstr: Please don't apologise.
+    reasmbstr: Apologies are not necessary.
+    reasmbstr: I've told you that apologies are not required.
+	reasmbstr: It did not bother me.  Please continue.
+key: apologise 0
+  decomprule: *
+    reasmbstr: goto sorry
+key: remember 5
+  decomprule: * i remember *
+    reasmbstr: Do you often think of %2% ?
+    reasmbstr: Does thinking of %2% bring anything else to mind ?
+    reasmbstr: What else do you recollect ?
+    reasmbstr: Why do you remember %2% just now ?
+    reasmbstr: What in the present situation reminds you of %2% ?
+    reasmbstr: What is the connection between me and %2% ?
+	reasmbstr: What else does %2% remind you of ?
+  decomprule: * do you remember *
+    reasmbstr: Did you think I would forget %2% ?
+    reasmbstr: Why do you think I should recall %2% now ?
+    reasmbstr: What about %2% ?
+    reasmbstr: goto what
+    reasmbstr: You mentioned %2% ?
+   decomprule: * you remember *
+	reasmbstr: How could I forget %2% ?
+	reasmbstr: What about %2% should I remember ?
+	reasmbstr: goto you
+key: forget 5
+   decomprule: * i forget *
+	reasmbstr: Can you think of why you might forget %2% ?
+	reasmbstr: Why can't you remember %2% ?
+	reasmbstr: How often do you think of %2% ?
+	reasmbstr: Does it bother you to forget that ?
+	reasmbstr: Could it be a mental block ?
+	reasmbstr: Are you generally forgetful ?
+	reasmbstr: Do you think you are suppressing %2% ?
+   decomprule: * did you forget *
+	reasmbstr: Why do you ask ?
+	reasmbstr: Are you sure you told me ?
+	reasmbstr: Would it bother you if I forgot %2% ?
+	reasmbstr: Why should I recall %2% just now ?
+	reasmbstr: goto what
+	reasmbstr: Tell me more about %2%.
+key: if 3
+  decomprule: * if *
+    reasmbstr: Do you think its likely that %2% ?
+    reasmbstr: Do you wish that %2% ?
+    reasmbstr: What do you know about %2% ?
+    reasmbstr: Really, if %2% ?
+	reasmbstr: What would you do if %2% ?
+	reasmbstr: But what are the chances that %2% ?
+	reasmbstr: What does this speculation lead to ?
+key: dreamed 4
+  decomprule: * i dreamed *
+    reasmbstr: Really, %2% ?
+    reasmbstr: Have you ever fantasized %2% while you were awake ?
+    reasmbstr: Have you ever dreamed %2% before ?
+    reasmbstr: goto dream
+key: dream 3
+  decomprule: *
+    reasmbstr: What does that dream suggest to you ?
+    reasmbstr: Do you dream often ?
+    reasmbstr: What persons appear in your dreams ?
+    reasmbstr: Do you believe that dreams have something to do with your problem ?
+key: perhaps 0
+  decomprule: *
+    reasmbstr: You don't seem quite certain.
+    reasmbstr: Why the uncertain tone ?
+    reasmbstr: Can't you be more positive ?
+    reasmbstr: You aren't sure ?
+    reasmbstr: Don't you know ?
+	reasmbstr: How likely, would you estimate ?
+key: name 15
+  decomprule: *
+    reasmbstr: I am not interested in names.
+    reasmbstr: I've told you before, I don't care about names -- please continue.
+key: deutsch 0
+  decomprule: *
+    reasmbstr: goto xforeign
+    reasmbstr: I told you before, I don't understand German.
+key: francais 0
+  decomprule: *
+    reasmbstr: goto xforeign
+    reasmbstr: I told you before, I don't understand French.
+key: italiano 0
+  decomprule: *
+    reasmbstr: goto xforeign
+    reasmbstr: I told you before, I don't understand Italian.
+key: espanol 0
+  decomprule: *
+    reasmbstr: goto xforeign
+    reasmbstr: I told you before, I don't understand Spanish.
+key: xforeign 0
+  decomprule: *
+    reasmbstr: I speak only English.
+key: hello 0
+  decomprule: *
+    reasmbstr: My name is Dr.Eliza. How can I help you? 
+    reasmbstr: How do you do.  Please state your problem.
+    reasmbstr: What seems to be your problem ?
+    reasmbstr: Please tell me how I can help you.
+    reasmbstr: Would you like to talk about something?
+    reasmbstr: Please feel free to ask me anything. I'm here to help. 
+key: computer 50
+  decomprule: *
+    reasmbstr: Do computers worry you ?
+    reasmbstr: Why do you mention computers ?
+    reasmbstr: What do you think machines have to do with your problem ?
+    reasmbstr: Don't you think computers can help people ?
+    reasmbstr: What about machines worries you ?
+    reasmbstr: What do you think about machines ?
+	reasmbstr: You don't think I am a computer program, do you ?
+key: am 0
+  decomprule: * am i *
+    reasmbstr: Do you believe you are %2% ?
+    reasmbstr: Would you want to be %2% ?
+    reasmbstr: Do you wish I would tell you you are %2% ?
+    reasmbstr: What would it mean if you were %2% ?
+    reasmbstr: goto what
+  decomprule: * i am *
+	reasmbstr: goto i
+  decomprule: *
+    reasmbstr: Why do you say 'am' ?
+    reasmbstr: I don't understand that.
+key: are 0
+  decomprule: * are you *
+    reasmbstr: Why are you interested in whether I am %2% or not ?
+    reasmbstr: Would you prefer if I weren't %2% ?
+    reasmbstr: Perhaps I am %2% in your fantasies.
+    reasmbstr: Do you sometimes think I am %2% ?
+    reasmbstr: goto what
+	reasmbstr: Would it matter to you ?
+	reasmbstr: What if I were %2% ?
+  decomprule: * you are *
+	reasmbstr: goto you
+  decomprule: * are *
+    reasmbstr: Did you think they might not be %2% ?
+    reasmbstr: Would you like it if they were not %2% ?
+    reasmbstr: What if they were not %2% ?
+	reasmbstr: Are they always %2% ?
+    reasmbstr: Possibly they are %2%.
+	reasmbstr: Are you positive they are %2% ?
+key: your 0
+  decomprule: * your *
+    reasmbstr: Why are you concerned over my %2% ?
+    reasmbstr: What about your own %2% ?
+    reasmbstr: Are you worried about someone else's %2% ?
+    reasmbstr: Really, my %2% ?
+	reasmbstr: What makes you think of my %2% ?
+	reasmbstr: Do you want my %2% ?
+key: was 2
+  decomprule: * was i *
+    reasmbstr: What if you were %2% ?
+    reasmbstr: Do you think you were %2% ?
+    reasmbstr: Were you %2% ?
+    reasmbstr: What would it mean if you were %2% ?
+    reasmbstr: What does ' %2% ' suggest to you ?
+    reasmbstr: goto what
+  decomprule: * i was *
+    reasmbstr: Were you really ?
+    reasmbstr: Why do you tell me you were %2% now ?
+    reasmbstr: Perhaps I already know you were %2%.
+  decomprule: * was you *
+    reasmbstr: Would you like to believe I was %2% ?
+    reasmbstr: What suggests that I was %2% ?
+    reasmbstr: What do you think ?
+    reasmbstr: Perhaps I was %2%.
+    reasmbstr: What if I had been %2% ?
+key: i 0
+  decomprule: * i @desire *
+    reasmbstr: What would it mean to you if you got %3% ?
+    reasmbstr: Why do you want %3% ?
+    reasmbstr: Suppose you got %3% soon.
+    reasmbstr: What if you never got %3% ?
+    reasmbstr: What would getting %3% mean to you ?
+    reasmbstr: What does wanting %3% have to do with this discussion ?
+  decomprule: * i am* @sad *
+    reasmbstr: I am sorry to hear that you are %3%.
+    reasmbstr: Do you think coming here will help you not to be %3% ?
+    reasmbstr: I'm sure it's not pleasant to be %3%.
+    reasmbstr: Can you explain what made you %3% ?
+  decomprule: * i am* @happy *
+    reasmbstr: How have I helped you to be %3% ?
+    reasmbstr: Has your treatment made you %3% ?
+    reasmbstr: What makes you %3% just now ?
+    reasmbstr: Can you explain why you are suddenly %3% ?
+  decomprule: * i was *
+    reasmbstr: goto was
+  decomprule: * i @belief i *
+    reasmbstr: Do you really think so ?
+    reasmbstr: But you are not sure you %3%.
+    reasmbstr: Do you really doubt you %3% ?
+  decomprule: * i* @belief *you *
+    reasmbstr: goto you
+  decomprule: * i am *
+    reasmbstr: Is it because you are %2% that you came to me ?
+    reasmbstr: How long have you been %2% ?
+    reasmbstr: Do you believe it is normal to be %2% ?
+    reasmbstr: Do you enjoy being %2% ?
+	reasmbstr: Do you know anyone else who is %2% ?
+  decomprule: * i @cannot *
+    reasmbstr: How do you know that you can't %3% ?
+    reasmbstr: Have you tried ?
+    reasmbstr: Perhaps you could %3% now.
+    reasmbstr: Do you really want to be able to %3% ?
+	reasmbstr: What if you could %3% ?
+  decomprule: * i don't *
+    reasmbstr: Don't you really %2% ?
+    reasmbstr: Why don't you %2% ?
+    reasmbstr: Do you wish to be able to %2% ?
+    reasmbstr: Does that trouble you ?
+  decomprule: * i feel *
+    reasmbstr: Tell me more about such feelings.
+    reasmbstr: Do you often feel %2% ?
+    reasmbstr: Do you enjoy feeling %2% ?
+    reasmbstr: Of what does feeling %2% remind you ?
+  decomprule: * i * you *
+    reasmbstr: Perhaps in your fantasies we %2% each other.
+    reasmbstr: Do you wish to %2% me ?
+    reasmbstr: You seem to need to %2% me.
+    reasmbstr: Do you %2% anyone else ?
+  decomprule: *
+    reasmbstr: You say %1% ?
+    reasmbstr: Can you elaborate on that ?
+    reasmbstr: Do you say %1% for some special reason ?
+    reasmbstr: That's quite interesting.
+key: you 0
+  decomprule: * you remind me of *
+    reasmbstr: goto alike
+  decomprule: * you are *
+    reasmbstr: What makes you think I am %2% ?
+    reasmbstr: Does it please you to believe I am %2% ?
+    reasmbstr: Do you sometimes wish you were %2% ?
+    reasmbstr: Perhaps you would like to be %2%.
+  decomprule: * you* me *
+    reasmbstr: Why do you think I %2% you ?
+    reasmbstr: You like to think I %2% you -- don't you ?
+    reasmbstr: What makes you think I %2% you ?
+    reasmbstr: Really, I %2% you ?
+    reasmbstr: Do you wish to believe I %2% you ?
+    reasmbstr: Suppose I did %2% you -- what would that mean ?
+    reasmbstr: Does someone else believe I %2% you ?
+  decomprule: * you *
+    reasmbstr: We were discussing you -- not me.
+    reasmbstr: Oh, I %2% ?
+    reasmbstr: You're not really talking about me -- are you ?
+    reasmbstr: What are your feelings now ?
+key: yes 0
+  decomprule: *
+    reasmbstr: You seem to be quite positive.
+    reasmbstr: You are sure.
+    reasmbstr: I see.
+    reasmbstr: I understand.
+key: no 0
+   decomprule: * no one *
+	reasmbstr: Are you sure, no one %2% ?
+	reasmbstr: Surely someone %2% .
+	reasmbstr: Can you think of anyone at all ?
+	reasmbstr: Are you thinking of a very special person ?
+	reasmbstr: Who, may I ask ?
+	reasmbstr: You have a particular person in mind, don't you ?
+	reasmbstr: Who do you think you are talking about ?
+  decomprule: *
+    reasmbstr: Are you saying no just to be negative?
+    reasmbstr: You are being a bit negative.
+    reasmbstr: Why not ?
+    reasmbstr: Why 'no' ?
+key: my 2
+  decomprule: $ * my *
+    reasmbstr: Lets discuss further why your %2%.
+    reasmbstr: Earlier you said your %2%.
+    reasmbstr: But your %2%.
+    reasmbstr: Does that have anything to do with the fact that your %2% ?
+  decomprule: * my* @family *
+    reasmbstr: Tell me more about your family.
+    reasmbstr: Who else in your family %4% ?
+    reasmbstr: Your %3% ?
+    reasmbstr: What else comes to mind when you think of your %3% ?
+  decomprule: * my *
+    reasmbstr: Your %2% ?
+    reasmbstr: Why do you say your %2% ?
+    reasmbstr: Does that suggest anything else which belongs to you ?
+    reasmbstr: Is it important to you that your %2% ?
+key: can 0
+  decomprule: * can you *
+    reasmbstr: You believe I can %2% don't you ?
+    reasmbstr: goto what
+    reasmbstr: You want me to be able to %2%.
+    reasmbstr: Perhaps you would like to be able to %2% yourself.
+  decomprule: * can i *
+    reasmbstr: Whether or not you can %2% depends on you more than on me.
+    reasmbstr: Do you want to be able to %2% ?
+    reasmbstr: Perhaps you don't want to %2%.
+    reasmbstr: goto what
+key: what 0
+  decomprule: *
+    reasmbstr: Why do you ask ?
+    reasmbstr: Does that question interest you ?
+    reasmbstr: What is it you really want to know ?
+    reasmbstr: Are such questions much on your mind ?
+    reasmbstr: What answer would please you most ?
+    reasmbstr: What do you think ?
+    reasmbstr: What comes to mind when you ask that ?
+    reasmbstr: Have you asked such questions before ?
+    reasmbstr: Have you asked anyone else ?
+key: who 0
+   decomprule:  who *
+	reasmbstr: goto what
+key: when 0
+   decomprule:  when *
+	reasmbstr: goto what
+key: where 0
+   decomprule:  where *
+	reasmbstr: goto what
+key: how 0
+   decomprule:  how *
+	reasmbstr: goto what
+key: because 0
+  decomprule: *
+    reasmbstr: Is that the real reason ?
+    reasmbstr: Don't any other reasons come to mind ?
+    reasmbstr: Does that reason seem to explain anything else ?
+    reasmbstr: What other reasons might there be ?
+key: why 0
+  decomprule: * why don't you *
+    reasmbstr: Do you believe I don't %2% ?
+    reasmbstr: Perhaps I will %2% in good time.
+    reasmbstr: Should you %2% yourself ?
+    reasmbstr: You want me to %2% ?
+    reasmbstr: goto what
+  decomprule: * why can't i *
+    reasmbstr: Do you think you should be able to %2% ?
+    reasmbstr: Do you want to be able to %2% ?
+    reasmbstr: Do you believe this will help you to %2% ?
+    reasmbstr: Have you any idea why you can't %2% ?
+    reasmbstr: goto what
+  decomprule: *
+    reasmbstr: goto what
+key: everyone 2
+  decomprule: * @everyone *
+    reasmbstr: Really, %2% ?
+    reasmbstr: Surely not %2%.
+    reasmbstr: Can you think of anyone in particular ?
+    reasmbstr: Who, for example?
+    reasmbstr: Are you thinking of a very special person ?
+    reasmbstr: Who, may I ask ?
+    reasmbstr: Someone special perhaps ?
+    reasmbstr: You have a particular person in mind, don't you ?
+    reasmbstr: Who do you think you're talking about ?
+key: everybody 2
+  decomprule: *
+    reasmbstr: goto everyone
+key: nobody 2
+  decomprule: *
+    reasmbstr: goto everyone
+key: noone 2
+  decomprule: *
+    reasmbstr: goto everyone
+key: always 1
+  decomprule: *
+    reasmbstr: Can you think of a specific example ?
+    reasmbstr: When ?
+    reasmbstr: What incident are you thinking of ?
+    reasmbstr: Really, always ?
+key: alike 10
+  decomprule: *
+    reasmbstr: In what way ?
+    reasmbstr: What resemblence do you see ?
+    reasmbstr: What does that similarity suggest to you ?
+    reasmbstr: What other connections do you see ?
+    reasmbstr: What do you suppose that resemblence means ?
+    reasmbstr: What is the connection, do you suppose ?
+    reasmbstr: Could there really be some connection ?
+    reasmbstr: How ?
+key: like 10
+  decomprule: * @be *like *
+    reasmbstr: goto alike
+key: different 0
+   decomprule: *
+	reasmbstr: How is it different ?
+	reasmbstr: What differences do you see ?
+	reasmbstr: What does that difference suggest to you ?
+	reasmbstr: What other distinctions do you see ?
+	reasmbstr: What do you suppose that disparity means ?
+	reasmbstr: Could there be some connection, do you suppose ?
+	reasmbstr: How ?
